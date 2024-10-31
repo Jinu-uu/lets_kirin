@@ -1,2 +1,2 @@
-# lets_kirin
-Sejong univ. academic conference
+# lets_girin
+lets girin
