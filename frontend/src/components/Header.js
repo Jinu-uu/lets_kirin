@@ -8,7 +8,7 @@ function Header() {
         <HeaderBox>
             <LeftBox>
                 <h1>시간표</h1>
-                <h1>수업 정보</h1>
+                <h1>사용법</h1>
             </LeftBox>
             <LogoBox>
                 <img src={kirinlogo} alt="로고" onClick={() => { navigate("/"); }} />
