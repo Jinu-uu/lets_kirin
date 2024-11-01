@@ -65,7 +65,8 @@ function Timetable() {
                     <ul>
                         {timetable.map(course => (
                             <li key={course.courseId}>
-                                {course.courseName} - {course.courseStartTime} - {course.courseEndTime} - {course.courseRoom} - {course.professor} - {course.courseDays.join(', ')}
+                                {course.courseName} - {course.courseStartTime} - {course.courseEndTime} - {course.courseRoom} - {course.professor} - {course.courseDays.join(', ')} <br />
+                                추천 이유 : {course.describe}
                             </li>
                         ))}
                     </ul>
