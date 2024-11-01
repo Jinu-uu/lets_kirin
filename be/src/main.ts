@@ -8,8 +8,8 @@ async function bootstrap() {
   
   // CORS 설정
   app.enableCors({
-    origin: true,  // 개발 환경에서는 모든 origin 허용
-    credentials: true,
+    origin: 'http://localhost:3000', // 프론트엔드 URL
+    credentials: true, // 필요 시 쿠키를 포함시키기 위한 설정
   });
 
   // 모든 IP에서 접근 가능하도록 설정
