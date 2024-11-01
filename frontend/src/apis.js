@@ -2,7 +2,7 @@ import axios from 'axios';
 // api를 정의하는 코드 파일 
 const instance = axios.create({
     //baseURL: process.env.REACT_APP_BACK_API,
-    baseURL: "http://172.16.41.240:8000", // 배포시 변경 에정
+    baseURL: "http://localhost:8000", // 배포시 변경 에정
     withCredentials: true,
 })
 // Axios 라이브러리를 사용하여 HTTP 클라이언트 인스턴스를 생성하는 부분
