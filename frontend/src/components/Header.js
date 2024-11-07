@@ -49,7 +49,7 @@ export default Header;
 
 const HeaderBox = styled(FlexBox)`
     width: 100%;
-    height: 18%;
+    height: 18vh;
     padding-left: 6.25%;
     padding-right: 6.25%;
     flex-direction: row;
