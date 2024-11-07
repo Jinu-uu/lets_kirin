@@ -5,7 +5,7 @@ import { uploadS3 } from "../utils/upload";
 import { apiGetTimeTable, apiUploadFile } from "../apis";
 import useLogin from "../hooks/useLogin";
 function Timetable() {
-    useLogin();
+    //useLogin();
     const token = sessionStorage.getItem('token');
     const [visible, setVisible] = useState(true);
     const [fileData, setFileData] = useState({
