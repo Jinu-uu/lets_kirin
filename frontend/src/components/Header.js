@@ -1,14 +1,15 @@
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import kirinlogo from "../images/kirinlogo.png";
 import { FlexBox } from "../styles/styled";
 import { useEffect, useState } from "react";
 function Header() {
     const navigate = useNavigate();
+    const location = useLocation();
     const [activeClass, setActiveClass] = useState('');
 
-    const getURL = () => {
-        const currentURL = window.location.pathname;
+    useEffect(() => {
+        const currentURL = location.pathname;
         if (currentURL.startsWith("/timetable")) {
             setActiveClass("timetable-active");
         } else if (currentURL.startsWith("/instruction")) {
@@ -18,15 +19,11 @@ function Header() {
         } else {
             setActiveClass(''); // 기본 클래스 설정
         }
-    };
+    }, [location]);
     const logOut = () => {
         sessionStorage.removeItem('token');
         navigate('/login');
     }
-    // 컴포넌트가 마운트될 때 URL 확인
-    useEffect(() => {
-        getURL();
-    }, []);
 
     return (
         <HeaderBox>

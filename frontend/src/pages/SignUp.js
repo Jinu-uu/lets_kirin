@@ -84,6 +84,7 @@ export default SignUp;
 const SignUpContainer = styled(FlexBox)`
     width: 33%;
     height: 100%;
+    min-width: 480px;
     padding-top: 2%;
     flex-direction: column;
     align-items: center;
@@ -97,6 +98,8 @@ const SignUpLogo = styled(FlexBox)`
     cursor: pointer;
     width: 30%;
     height: 10%;
+    min-width: 160px;
+    min-height: 64px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -106,12 +109,13 @@ const SignUpLogo = styled(FlexBox)`
         height: auto;
     }
     p{
-        font-size: 1.3rem;
+        font-size: 24px;
     }
 `
 const SignUpSection = styled(FlexBox)`
     width: 100%;
     height: 75%;
+    min-height: 500px;
     padding-top: 10%;
     gap: 5%;
     border: 2px solid #404040;
@@ -122,6 +126,7 @@ const SignUpSection = styled(FlexBox)`
 const SignUpFont = styled(FlexBox)`
     width: 100%;
     height: 10%;
+    min-height: 50px;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -131,12 +136,13 @@ const SignUpFont = styled(FlexBox)`
         width: auto;
     }
     p{
-        font-size:0.75rem;
+        font-size:14px;
     }
 `
 const SignUpPart1 = styled(FlexBox)`
     width: 70%;
     height: 27%;
+    min-height: 150px;
     justify-content: center;
     flex-direction: column;
 `
@@ -150,16 +156,17 @@ const InputBox = styled.input`
     border-right :${({ right }) => `${right}`};
     border-radius: ${({ radius }) => `${radius}`};
     padding-left:8%;
-    font-size: 0.6rem;
+    font-size: 12px;
     font-weight:700;
     color:#404040;
-    ::placeholder{
-       font-size:0.8rem; 
+    &::placeholder{
+       font-size:12px;
     }
 `
 const SignUpPart2 = styled(SignUpPart1)`
     margin-top: 5%;
     height: 18%;
+    min-height: 100px;
 `
 const InputBox2 = styled(InputBox)`
     height: 50%;
@@ -167,6 +174,7 @@ const InputBox2 = styled(InputBox)`
 const SubmitBtn = styled.button`
     width: 70%;
     height: 7%;
+    min-height: 35px;
     margin-top: 5%;
     background-color: #404040;
     display: flex;
@@ -175,16 +183,16 @@ const SubmitBtn = styled.button`
     border-radius: 8px;
     p{
         color: #FFF;
-        font-size: 0.6rem;
+        font-size: 12px;
     }
     img{
-        height: 0.65rem;
+        height: 13px;
         width: auto;
     }
 `
 const GithubImg = styled.img`
     margin-top: 6%;
-    width: 1.5rem;
+    width: 30px;
     height: auto;
     cursor: pointer;
 `

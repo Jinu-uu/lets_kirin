@@ -70,6 +70,7 @@ export default Login;
 const LoginContainer = styled(FlexBox)`
     width: 33%;
     height: 100%;
+    min-width: 480px;
     padding-top: 4%;
     flex-direction: column;
     align-items: center;
@@ -82,6 +83,8 @@ const LoginLogo = styled(FlexBox)`
     cursor: pointer;
     width: 30%;
     height: 20%;
+    min-width: 160px;
+    min-height: 100px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -91,12 +94,13 @@ const LoginLogo = styled(FlexBox)`
         height: auto;
     }
     p{
-        font-size: 1.3rem;
+        font-size: 24px;
     }
 `
 const LoginSection = styled(FlexBox)`
     width: 100%;
     height: 50%;
+    min-height: 360px;
     border: 2px solid #404040;
     border-radius: 16px;
     align-items: center;
@@ -106,45 +110,52 @@ const LoginFont = styled(FlexBox)`
     margin-top: 6%;
     width: 50%;
     height: 15%;
+    min-height: 80px;
     justify-content: center;
     align-items: center;
     p{
-        font-size: 0.8rem;
+        font-size: 16px;
     }
 `
 const LoginID = styled.input`
     display: flex;
     width: 70%;
     height: 12%;
+    min-height: 40px;
     border-radius: 16px 16px 0px 0px;
     border: 1px solid #404040;
     border-bottom:0px;
     padding-left:5%;
-    font-size: 0.6rem;
+    font-size: 12px;
     font-weight:700;
     color:#404040;
-    ::placeholder{
-       font-size:0.8rem; 
+    &::placeholder{
+        font-size: 12px;
     }
 `
 const LoginPW = styled.input`
     display: flex;
     width: 70%;
     height: 12%;
+    min-height: 40px;
     border-radius: 0px 0px 16px 16px;
     border: 1px solid #404040;
     padding-left:5%;
-    font-size: 0.6rem;
+    font-size: 12px;
     font-weight:700;
     color:#404040;
+    &::placeholder{
+        font-size: 12px;
+    }
     `
 const LoginBtn = styled.button`
     margin-top: 4%;
     text-align:flex;
     width: 70%;
     height: 8.5%;
+    min-height: 30px;
     background-color: #404040;
-    font-size: 0.6rem;
+    font-size: 12px;
     font-weight: bold;
     color: #fff;
     border-radius: 12px;
@@ -152,10 +163,11 @@ const LoginBtn = styled.button`
 const ORSection = styled(FlexBox)`
     width: 80%;
     height: 10%;
+    min-height: 30px;
     margin-top: 2%;
     align-items: center;
     justify-content:space-between;
-    font-size: 0.6rem;
+    font-size: 12px;
     color: #404040;
     font-weight: 700;
 `
@@ -167,6 +179,7 @@ const ORLine = styled(FlexBox)`
 const SignUp = styled(FlexBox)`
     width: 70%;
     height: 10%;
+    min-height: 30px;
     cursor: pointer;
     border-radius: 12px;
     border: 1px solid #404040;
@@ -180,12 +193,12 @@ const SignUp = styled(FlexBox)`
         height:100%;
         display:flex;
         align-items:center;
-        font-size:0.7rem;
+        font-size: 14px;
         color: #404040;
         font-weight: bold;
         gap:5%;
         img{
-            height:0.7rem;
+            height: 14px;
             width:auto;
         }
     }
@@ -196,7 +209,7 @@ const SignUp = styled(FlexBox)`
 `
 const GithubImg = styled.img`
     margin-top: 35%;
-    width: 1.5rem;
+    width: 30px;
     height: auto;
     cursor: pointer;
 `
