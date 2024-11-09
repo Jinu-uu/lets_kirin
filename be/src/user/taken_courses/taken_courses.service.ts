@@ -2,7 +2,7 @@ import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { TakenCourses } from "./taken_courses.entity";
 import { Repository } from "typeorm";
-import * as XLSX from 'xlsx'
+import * as XLSX from 'xlsx';
 
 @Injectable()
 export class TakenCoursesService {

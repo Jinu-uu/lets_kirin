@@ -1,6 +1,6 @@
-import { Controller, Get, Post, Body, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Delete, Query } from '@nestjs/common';
 import { CourseService } from './course.service';
-import { Course } from './course.entity';
+import { Courses } from './course.entity';
 import { ResponseDto } from 'src/common/dto/response.dto';
 
 @Controller('course')
@@ -10,17 +10,17 @@ export class CourseController {
 ) {}
 
   @Post('upload')
-  create(@Body() courseData: Partial<Course>): Promise<Course> {
+  create(@Body() courseData: Partial<Courses>): Promise<Courses> {
     return this.courseService.create(courseData);
   }
 
   @Get('findOne/:id')
-  findOne(@Param('id') id: string): Promise<Course> {
+  findOne(@Param('id') id: string): Promise<Courses> {
     return this.courseService.findOne(+id);
   }
 
   @Get('findAll')
-  findAll(): Promise<Course[]> {
+  findAll(): Promise<Courses[]> {
     return this.courseService.findAll();
   }
 
@@ -32,5 +32,10 @@ export class CourseController {
   @Get('timetable')
   async getTimetable() {
     return this.courseService.getTimetable();
+  }
+
+  @Get('search')
+  async search(@Query('query') query: string) {
+    return this.courseService.search(query);
   }
 }

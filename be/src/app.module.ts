@@ -7,6 +7,7 @@ import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
 import { TakenCoursesModule } from './user/taken_courses/taken_courses.module';
 
+
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -18,11 +19,13 @@ import { TakenCoursesModule } from './user/taken_courses/taken_courses.module';
       database: 'lets_kirin',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
+      logging: true,
     }),
     CourseModule,
     UserModule,
     AuthModule,
     TakenCoursesModule,
+
   ],
   controllers: [AppController],
   providers: [AppService],

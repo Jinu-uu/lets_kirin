@@ -1,43 +1,61 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-export class Course {
+export class Courses {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
-  department: string;
+  department_major: string;
 
   @Column()
-  courseNumber: string;
+  course_number: string;
 
   @Column()
-  courseDivision: string;
+  section_number: number;
 
   @Column()
-  courseTitle: string;
+  course_name: string;
 
   @Column()
-  courseLanguage: string;
+  lecture_language: string;
 
   @Column()
-  courseClassification: string;
+  course_classification: string;
 
   @Column()
-  credit: number;
+  elective_area: string;
 
   @Column()
-  grade: number;
+  credits_theory_practice: string;
 
   @Column()
-  professor: string;
+  year_semester: number;
 
   @Column()
-  courseStartTime: string;
-    
-  @Column()
-  courseEndTime: string;
+  target_course: string;
 
   @Column()
-  courseRoom: string;
+  course_summary: string;
+
+  @Column()
+  syllabus: string;
+
+  @Column()
+  main_department: string;
+
+  @Column()
+  professor_name: string;
+
+  @Column()
+  day_time: string;
+
+  @Column()
+  classroom: string;
+
+  @Column()
+  online_course: string;
+
+  @Column()
+  credits: number;
 }

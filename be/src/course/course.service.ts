@@ -1,26 +1,26 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
-import { Course } from './course.entity';
+import { Like, Repository } from 'typeorm';
+import { Courses } from './course.entity';
 
 @Injectable()
 export class CourseService {
 
   constructor(
-    @InjectRepository(Course)
-    private readonly courseRepository: Repository<Course>,
+    @InjectRepository(Courses)
+    private readonly courseRepository: Repository<Courses>,
   ) {}
 
-  public async create(courseData: Partial<Course>): Promise<Course> {
+  public async create(courseData: Partial<Courses>): Promise<Courses> {
     // const course = this.courseRepository.create(courseData);
     return this.courseRepository.save(courseData);
   }
 
-  public async findAll(): Promise<Course[]> {
+  public async findAll(): Promise<Courses[]> {
     return this.courseRepository.find();
   }
 
-  public async findOne(id: number): Promise<Course> {
+  public async findOne(id: number): Promise<Courses> {
     return this.courseRepository.findOne({ where: { id : id } });
   }
 
@@ -97,5 +97,9 @@ export class CourseService {
         }
       ]
     };
+  }
+
+  public async search(query: string) {
+    return this.courseRepository.find({ where: { course_name: Like(`%${query}%`) } });
   }
 }
