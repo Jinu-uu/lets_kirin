@@ -28,7 +28,7 @@ export default Footer;
 
 const FooterBox = styled(FlexBox)`
     width: 100%;
-    height: 11%;
+    height: 11vh;
     background-color: #404040;
 `
 const LogoSection = styled(FlexBox)`
