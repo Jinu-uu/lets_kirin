@@ -10,12 +10,14 @@ import runKirin from "../images/runningkirin.png";
 function Timetable() {
     //useLogin();
     const token = sessionStorage.getItem('token');
-    const [visible, setVisible] = useState(false);
     const [fileData, setFileData] = useState({ file: null });
     // 선택된 항목의 인덱스를 상태로 저장
     const [selectedIndex, setSelectedIndex] = useState(0);
-    const [timetable, setTimetable] = useState([
+    const [timetable, setTimetable] = useState(
         {
+            "fileUpload": true,
+            "userName": "이기탁",
+            "year": 20,
             "semesters": [
                 {
                     "semester": "1",  // 만들어진 시간표 순서
@@ -173,7 +175,7 @@ function Timetable() {
                 }
             ]
         }
-    ]);
+    );
     const dayMap = {
         "월요일": 2,
         "화요일": 3,
@@ -226,7 +228,10 @@ function Timetable() {
     const handleSubmit = async () => {
         try {
             await apiUploadFile(fileData.file, token); // 비동기 호출
-            setVisible(false);
+            setTimetable(prevTimetable => ({
+                ...prevTimetable,
+                fileUpload: true // 원하는 값으로 변경
+            }));
             await fetchTimetable(); // 시간표 데이터 새로 고침
         } catch (error) {
             console.log('Error uploading file:', error); // 오류 처리
@@ -245,7 +250,7 @@ function Timetable() {
 
     return (
         <Wrapper>
-            <FileWidthBlock isVisible={visible}>
+            <FileWidthBlock fileUpload={timetable.fileUpload}>
                 <h1>NOT FOUND 404 <br />너의 수업은?</h1>
                 <h2>We still don't have any information about you...<br />파일 업로드 부탁드립니다...🙏</h2>
                 <input type="file" accept=".xlsx, .xls" onChange={handleChange} style={{ display: "none" }} id="file-upload" />
@@ -257,14 +262,14 @@ function Timetable() {
                     </FileButton>
                 </label>
             </FileWidthBlock>
-            <TimeTableWidthBlock isVisible={visible}>
+            <TimeTableWidthBlock fileUpload={timetable.fileUpload}>
                 <TimeList>
                     <User>
-                        <p>20학번 이기탁</p>
+                        <p>{timetable.year}학번 {timetable.userName}</p>
                         <img src={add} />
                     </User>
                     <ListBlock>
-                        {timetable[0].semesters.map((semester, index) => (
+                        {timetable.semesters.map((semester, index) => (
                             <List key={index} className={selectedIndex === index ? 'select' : 'wait'} onClick={() => handleListClick(index)} >
                                 Let's Kirin 추천 {semester.semester}
                             </List>
@@ -299,7 +304,7 @@ function Timetable() {
                         });
                     })}
 
-                    {timetable[0].semesters[selectedIndex].courses.map((course, index) =>
+                    {timetable.semesters[selectedIndex].courses.map((course, index) =>
                         course.schedule.map((schedule, sIndex) => {
                             const [startTime, endTime] = schedule.time.split(" ~ ");
                             const { startRow, endRow } = calculateGridRow(startTime, endTime);
@@ -311,7 +316,7 @@ function Timetable() {
                                     endRow={endRow + 2}
                                     color={colorList[index]}
                                 >
-                                    {course.courseName} <br /> {course.professor_name} <br /> {schedule.location} {index}
+                                    {course.courseName} <br /> {course.professor_name} <br /> {schedule.location}
                                 </CourseBlock>
                             );
                         })
@@ -323,7 +328,7 @@ function Timetable() {
 }
 export default Timetable;
 const FileWidthBlock = styled(FlexBox)`
-    display: ${props => (props.isVisible ? 'flex' : 'none')};
+    display: ${props => (props.fileUpload ? 'none' : 'flex')};
     flex-direction: column;
     width: 100vw;
     height: 82vh;
@@ -379,7 +384,7 @@ const FileButton = styled(FlexBox)`
     }
 `
 const TimeTableWidthBlock = styled(FlexBox)`
-    display: ${props => (props.isVisible ? 'none' : 'flex')};
+    display: ${props => (props.fileUpload ? 'flex' : 'none')};
     width: 100vw;
     height: 82vh;
     justify-content: center;
