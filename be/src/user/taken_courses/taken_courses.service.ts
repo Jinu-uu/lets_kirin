@@ -15,32 +15,27 @@ export class TakenCoursesService {
         try {
             const workbook = XLSX.read(file.buffer, { type: 'buffer' });
             const worksheet = workbook.Sheets[workbook.SheetNames[0]];
-            const data = XLSX.utils.sheet_to_json(worksheet);
-
-            console.log('Parsed Excel Data:', data);
-
+            const allData = XLSX.utils.sheet_to_json(worksheet);
+            const data = allData.slice(3);
             for (const row of data) {
                 const takenCourse = this.takenCoursesRepository.create({
                     userId,
-                    year: Number(row['년도']) || null,
-                    semester: String(row['학기']) || null,
-                    courseNumber: Number(row['학수번호']) || null,
-                    courseName: String(row['교과목명']) || '',
-                    courseClassification: String(row['이수구분']) || '',
-                    courseField: String(row['교직영역']) || '',
-                    selectionField: String(row['선택영역']) || '',
-                    courseCredit: Number(row['학점']) || null,
-                    evaluation: row['평가방식'] === 'P/NP' ? 'P/NP' : 'GRADE',
-                    grade: String(row['등급']) || '',
-                    rating: Number(row['평가']) || 0.0,
-                    departmentCode: String(row['개설학과코드']) || ''
+                    year: Number(row['__EMPTY']) || null,
+                    semester: String(row['__EMPTY_1'])?.replace('학기', '') || null,
+                    courseNumber: Number(row['__EMPTY_2']) || null,
+                    courseName: String(row['__EMPTY_3']) || '',
+                    courseClassification: String(row['__EMPTY_4']) || '',
+                    courseField: String(row['__EMPTY_5']) || '',
+                    selectionField: String(row['__EMPTY_6']) || '',
+                    courseCredit: Number(row['__EMPTY_7']) || null,
+                    evaluation: row['__EMPTY_8'] === 'P/NP' ? 'P/NP' : 'GRADE',
+                    grade: String(row['__EMPTY_9']) || '',
+                    rating: Number(row['__EMPTY_10']) || 0.0,
+                    departmentCode: String(row['__EMPTY_11']) || ''
                 });
-                
-                console.log('Created entity:', takenCourse);
 
                 try {
-                    const savedCourse = await this.takenCoursesRepository.save(takenCourse);
-                    console.log('Saved course:', savedCourse);
+                    await this.takenCoursesRepository.save(takenCourse);
                 } catch (error) {
                     console.error('Error saving course:', error);
                     throw error;

@@ -1,4 +1,4 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn, ManyToOne, PrimaryColumn } from "typeorm";
+import { BaseEntity, Column, Entity, PrimaryGeneratedColumn, ManyToOne, PrimaryColumn, JoinColumn } from "typeorm";
 import { User } from "../user.entity";
 
 @Entity()
@@ -47,4 +47,7 @@ export class TakenCourses extends BaseEntity {
     
     @Column({ nullable: true })
     departmentCode: string;
+
+    @Column({ type: 'simple-array', nullable: true })
+    skillLevel: string[];
 }   

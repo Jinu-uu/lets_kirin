@@ -19,8 +19,8 @@ export class UserRepository extends Repository<User> {
         try {
             await this.save(user);
         } catch (error) {
-            if (error.code === '"ER_DUP_ENTRY"') {
-                throw new ConflictException('Existing email');
+            if (error.code === "ER_DUP_ENTRY") {
+                throw new ConflictException('이미 사용 중인 아이디입니다.');
             } else {
                 throw new InternalServerErrorException();
             }

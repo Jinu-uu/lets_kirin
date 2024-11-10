@@ -19,8 +19,8 @@ export class AuthService {
         try {
             await this.userRepository.createUser(authCredentialDto);
         } catch (error) {
-            if (error.code === 'ER_DUP_ENTRY') {
-                throw new ConflictException('이미 존재하는 이메일입니다.');
+            if (error.code === 'ER_DUP_ENTRY') { // MariaDB의 중복 오류 코드
+                throw new ConflictException('이미 사용 중인 아이디입니다.'); // 중복 아이디에 대한 메시지
             } else {
                 throw new InternalServerErrorException('회원 가입 중 오류가 발생했습니다.');
             }

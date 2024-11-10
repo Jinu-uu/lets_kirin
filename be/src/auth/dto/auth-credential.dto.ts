@@ -1,8 +1,10 @@
-import { IsEmail, IsNumber, IsString, Matches, MaxLength, MinLength } from 'class-validator';
+import { IsEmail, IsNotEmpty, IsNumber, IsString, Matches, MaxLength, MinLength } from 'class-validator';
 
 export class AuthCredentialDto {
 
     @IsString()
+    @IsNotEmpty()
+    @IsUnique()
     id: string;
 
     @IsString()
@@ -18,4 +20,9 @@ export class AuthCredentialDto {
 
     @IsString()
     year: string;
+}
+function IsUnique(): (target: AuthCredentialDto, propertyKey: "id") => void {
+    return (target: AuthCredentialDto, propertyKey: "id") => {
+        console.log(target, propertyKey);
+    }
 }
