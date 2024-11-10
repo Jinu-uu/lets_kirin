@@ -91,8 +91,8 @@ height: 55%;
 justify-content: center;
 align-items: center;
 img{
-     height: 90%;
-     width: auto;
+    height: 90%;
+    width: auto;
 }
 p{  
     text-align: center;

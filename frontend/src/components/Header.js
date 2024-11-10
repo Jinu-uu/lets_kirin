@@ -46,7 +46,7 @@ export default Header;
 
 const HeaderBox = styled(FlexBox)`
     width: 100%;
-    height: 18vh;
+    height: 18%;
     padding-left: 6.25%;
     padding-right: 6.25%;
     flex-direction: row;
@@ -70,8 +70,10 @@ const LeftBox = styled(FlexBox)`
         color: rgba(255,255,255,0.8);
         font-size: 14px;
         font-weight: 700;
+        transition: font-size 0.5s ease, color 0.5s ease;
     }
     h1:hover{
+        font-size: 16px;
         text-decoration: underline;
         color: white;
     }
@@ -109,10 +111,15 @@ const RightBox = styled(FlexBox)`
         color: rgba(255,255,255,0.8);
         padding-left: 5%;
         text-decoration: none;
+        transition: font-size 0.5s ease, color 0.5s ease;
     }
     h1:hover{
+        font-size: 14px;
         text-decoration: underline;
         color: white;
+        &.logout{
+            color: black;
+        }
     }
     .active{
         color: white;
@@ -149,6 +156,10 @@ const LogoBox = styled(FlexBox)`
     align-items: center;
     gap: 10px;
     cursor: pointer;
+    transition: transform 0.5s ease;
+    &:hover{
+        transform: scale(1.1);
+    }
     img{
         width: 45%;
         height: auto;
