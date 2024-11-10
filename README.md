@@ -1,50 +1,19 @@
-# lets_kirin Back-end
-Sejong univ. academic conference
+# Let's Kirin
 
-# 로컬환경에서 백엔드 작동하기
+이 프로젝트는 세종대학교 학술제를 위해 개발된 프로젝트입니다. 
 
-## 필수 조건
+이 저장소는 여러 브랜치를 통해 다양한 기능을 포함하고 있습니다.
 
-Node.js와 Git이 설치되어 있어야 합니다.
+## 프로젝트 개요
+ “Let’s Kirin”은 과목을 이수함으로써 얻을 수 있는 기술적, 사고적, 소통적 역량 등 실질적인 정보를 제공합니다. 학생들은 저희 서비스를 통해 자신만의 차별화된 시간표 및 미래 계획을 세울 수 있습니다. 
 
-Node.js 설치 링크
+## 브랜치 설명
 
-https://nodejs.org/en/download/package-manager
+- **main**: 주요 브랜치로, Front-end, Back-end, AI의 브랜치로 이동하는 브랜치입니다.
+- **fe (Frontend)**: 사용자 인터페이스와 관련된 모든 파일이 포함되어 있습니다. React 프레임워크를 사용하여 구성된 UI 요소들이 이 브랜치에 위치합니다.
+- **be (Backend)**: 서버 측 코드와 API 정의가 포함되어 있습니다. Node.js 프레임워크를 사용하여 백엔드 기술을 구현하였습니다.
+- **ai (Artificial Intelligence)**: 인공지능 관련 코드와 모델이 포함되어 있습니다. 
 
+## 사용 방법
 
-Git 설치 링크
-
-https://git-scm.com/book/ko/v2/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-Git-%EC%84%A4%EC%B9%98
-
-----------------
-
-### 실행 방법
-
-저장소 클론 터미널을 열고 다음 명령어를 입력하여 저장소를 클론합니다:
-
-````
-git clone https://github.com/사용자명/저장소명.git .
-````
-
-
-저장소명 폴더로 이동합니다:
-```
-cd 저장소명
-```
-의존성 설치 프로젝트의 의존성을 설치합니다:
-
-````
-npm i
-````
-
-
-프로젝트 시작 다음 명령어를 입력하여 프로젝트를 시작합니다:
-
-````
-npm start
-````
-
-아래와 같이 나오면 성공
-
-<img width="836" alt="KakaoTalk_20241101_172414533" src="https://github.com/user-attachments/assets/3fb5037a-a0c4-45da-8fbc-9e0ec75f14b1">
-
+각 브랜치로 전환하여 해당 영역의 코드를 확인하실 수 있습니다. 각 브랜치에는 관련 문서가 포함되어 있으니, 참고하시기 바랍니다. 상단의 브랜치 이동 버튼을 눌러 영역 별 readme.md 파일을 확인하실 수 있습니다.
