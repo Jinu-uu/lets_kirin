@@ -7,8 +7,10 @@ import useLogin from "../hooks/useLogin";
 import arrow from "../images/arrow-right-solid.svg";
 import add from "../images/Add_Time.svg";
 import runKirin from "../images/runningkirin.png";
+import { useNavigate } from "react-router-dom";
 function Timetable() {
     //useLogin();
+    const navigate = useNavigate();
     const token = sessionStorage.getItem('token');
     const [fileData, setFileData] = useState({ file: null });
     // 선택된 항목의 인덱스를 상태로 저장
@@ -266,7 +268,7 @@ function Timetable() {
                 <TimeList>
                     <User>
                         <p>{timetable.year}학번 {timetable.userName}</p>
-                        <img src={add} />
+                        <img src={add} onClick={() => navigate('/custom')} />
                     </User>
                     <ListBlock>
                         {timetable.semesters.map((semester, index) => (
@@ -412,12 +414,12 @@ const User = styled(FlexBox)`
         margin-left: 30%;
     }
     img{
-        width: 2rem;
+        width: 1.8rem;
         height: auto;
         cursor: pointer;
         transition: transform 0.5s ease; 
         &:hover{
-            transform: scale(1.15);
+            transform: scale(1.10);
         }
     }
 `

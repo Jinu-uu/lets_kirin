@@ -57,8 +57,8 @@ const HeaderBox = styled(FlexBox)`
 const LeftBox = styled(FlexBox)`
     width: 15%;
     height: 35%;
-    min-width: 200px;
-    min-height: 50px;
+    min-width: 8rem;
+    min-height: 2rem;
     background-color: black;
     border-radius: 32px;
     justify-content: space-between;
@@ -68,12 +68,12 @@ const LeftBox = styled(FlexBox)`
         cursor: pointer;
         width: 50%;
         color: rgba(255,255,255,0.8);
-        font-size: 14px;
+        font-size: 0.7rem;
         font-weight: 700;
         transition: font-size 0.5s ease, color 0.5s ease;
     }
     h1:hover{
-        font-size: 16px;
+        font-size: 0.8rem;
         text-decoration: underline;
         color: white;
     }
@@ -81,22 +81,12 @@ const LeftBox = styled(FlexBox)`
         color: white;
         text-decoration: underline;
     }
-    @media screen and (max-width: 1000px){
-        h1{
-            font-size: 12px;
-        }
-    }
-    @media screen and (min-width: 1600px){
-        h1{
-            font-size: 16px;
-        }
-    }
 `
 const RightBox = styled(FlexBox)`
     width: 15%;
     height: 35%;
-    min-width: 200px;
-    min-height: 50px;
+    min-width: 8rem;
+    min-height: 2rem;
     background-color: black;
     border-radius: 32px;
     justify-content: space-between;
@@ -106,7 +96,7 @@ const RightBox = styled(FlexBox)`
         position: relative;
         cursor: pointer;
         width: 50%;
-        font-size: 12px;
+        font-size: 0.6rem;
         font-weight: 700;
         color: rgba(255,255,255,0.8);
         padding-left: 5%;
@@ -114,7 +104,7 @@ const RightBox = styled(FlexBox)`
         transition: font-size 0.5s ease, color 0.5s ease;
     }
     h1:hover{
-        font-size: 14px;
+        font-size: 0.7rem;
         text-decoration: underline;
         color: white;
         &.logout{
@@ -136,22 +126,12 @@ const RightBox = styled(FlexBox)`
         border-radius: 32px;
         padding-right: 5%;
     }
-    @media screen and (max-width: 1000px){
-        h1{
-            font-size: 10px;
-        }
-    }
-    @media screen and (min-width: 1600px){
-        h1{
-            font-size: 14px;
-        }
-    }
 `
 const LogoBox = styled(FlexBox)`
     width: 10%;
     height: 40%;
-    min-width: 100px;
-    min-height: 50px;
+    min-width: 6rem;
+    min-height: 3rem;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -165,18 +145,8 @@ const LogoBox = styled(FlexBox)`
         height: auto;
     }
     h1{
-        font-size: 22px;
+        font-size: 1.2rem;
         font-weight: bold;
         color: black;
-    }
-    @media screen and (max-width: 1000px){
-        h1{
-            font-size: 18px;
-        }
-    }
-    @media screen and (min-width: 1600px){
-        h1{
-            font-size: 26px;
-        }
     }
 `
