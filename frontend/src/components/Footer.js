@@ -18,7 +18,7 @@ function Footer() {
                 <h1>본 웹사이트는 세종대학교 2024년 학술제 참가를 위해 만들어졌습니다.</h1>
             </SecondSection>
             <ThirdSection>
-                <img src={github} alt="깃허브" onClick={() => { navigate("/"); }} />
+                <img src={github} alt="깃허브" onClick={() => { window.location.href = "https://github.com/Jinu-uu/lets_kirin"; }} />
             </ThirdSection>
         </FooterBox>
     )
@@ -28,7 +28,7 @@ export default Footer;
 
 const FooterBox = styled(FlexBox)`
     width: 100%;
-    height: 11vh;
+    height: 11%;
     background-color: #404040;
 `
 const LogoSection = styled(FlexBox)`

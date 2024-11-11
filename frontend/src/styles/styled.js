@@ -4,6 +4,9 @@ export const FlexBox = styled.div`
 display:flex;
 flex-shrink: 0;
 `;
+export const GridBox = styled.div`
+display: grid;
+`
 
 export const Wrapper = styled(FlexBox)`
 position:relative;
