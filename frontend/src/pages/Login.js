@@ -7,12 +7,15 @@ import signuplogo from "../images/runningkirin.png";
 import arrow from "../images/arrow-right-solid-gray.svg";
 import github from "../images/github-solid-black.svg";
 import { apiLogin } from "../apis";
+
 function Login() {
     const navigate = useNavigate();
+    
     const [loginData, setLoginData] = useState({
         id: '',
         pw: '',
     });
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setLoginData(prev => ({
