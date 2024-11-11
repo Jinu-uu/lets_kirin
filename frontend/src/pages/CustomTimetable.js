@@ -202,7 +202,7 @@ const Submit = styled(FlexBox)`
         width: 8rem;
         height: 2rem;
         color: white;
-        font-size: 0.6rem;
+        font-size: 0.7rem;
         border-radius: 0.5rem;
         background-color: #404040;
         display: flex;
@@ -211,7 +211,7 @@ const Submit = styled(FlexBox)`
         gap: 0.25rem;
         transition: transform 0.5s ease, box-shadow 0.5s ease;
         img{
-            width: 0.6rem;
+            width: 0.7rem;
             height: auto;
         }
         &:hover{
