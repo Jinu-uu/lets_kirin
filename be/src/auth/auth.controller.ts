@@ -11,12 +11,11 @@ export class AuthController {
 
     @Post('/signup')
     public async signUp(@Body() authCredentialDto: AuthCredentialDto): Promise<ResponseDto> {
-        await this.authService.signUp(authCredentialDto);
-        return new ResponseDto(true, '회원 가입을 성공했습니다.', null);
+        return await this.authService.signUp(authCredentialDto);
     }
 
     @Post('/signin')
-    public async signIn(@Body() authCredentialDto: AuthCredentialDto): Promise<{ accessToken: string }> {
+    public async signIn(@Body() authCredentialDto: AuthCredentialDto): Promise<ResponseDto> {
         return this.authService.signIn(authCredentialDto);
     }
 
