@@ -112,7 +112,6 @@ export class TakenCoursesService {
 
             // GPA 계산
             const gpa = await this.calculateGPA(userId);
-            console.log('Calculated GPA:', gpa);
 
             // fileUpload 상태와 GPA 업데이트
             await this.userRepository.update(
